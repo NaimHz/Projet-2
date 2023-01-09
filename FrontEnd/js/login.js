@@ -8,31 +8,36 @@ async function checkLogs(a,b){
   body: JSON.stringify({email:a,password:b})
 }) 
 }
-async function login(){
+function login(){
     let sendButton = document.getElementById("login__submit")
     sendButton.addEventListener("click", async function(e){ 
         e.preventDefault();
         let id = document.getElementsByName("username")[0].value;
         let pwd = document.getElementsByName("password")[0].value;
-        console.log(id,pwd);
-        let checkLogsBoolean;
-        await checkLogs(id,pwd).then(function(res){ 
-            if(res.status==200) {
-                    checkLogsBoolean= true;
-                    console.log(res.status,res.json());
-                    a = res.json();
+        let resStat;
+        let resToken;
+        let resMessage;
+        await checkLogs(id,pwd).then(async function(res){ 
+            resStat = res.status;
+            if(resStat==200 || resStat==404) {
+                    return (res.json());
+                    }else{
+                    throw new Error("Wrong password");
+             }
+            })  .then(function(res){
+                    if(resStat==200){
+                        resToken = res.token;
+                        console.log(resToken);
+                        sessionStorage.setItem('key', resToken);
+                        window.location.href="index.html";
+                    }
+                    else{
+                        resMessage = res.message;
+                        console.log(resMessage);
+                    }
+            }) .catch(function(err)  {
                     
-                    }else{console.log(res)}}
-        ) .catch(function(err)  {
-                    checkLogsBoolean = false;
-                    console.log(err);
-    });
-        if(checkLogsBoolean){
-        console.log("ok");
-
-        }else{
-            console.log("ntm");
-        }
+            }) 
     })
   
 }

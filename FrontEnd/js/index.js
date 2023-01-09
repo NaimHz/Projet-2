@@ -94,7 +94,8 @@ function displayFilteredWorks(category){
 
 displayWorks();
 displayFilters();
-
+let ov = sessionStorage.getItem('key');
+console.log(ov);
 
 
 
