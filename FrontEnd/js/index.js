@@ -91,11 +91,50 @@ function displayFilteredWorks(category){
         console.log(err);
     });
 }
+function displayAdmin(token){
+
+    console.log(token);
+    if (token !== undefined && token !== null){
+        let buttons = document.getElementsByClassName("button__editor");
+        let head = document.getElementById("admin__edit");
+        let loginbutton = document.getElementById("login__button");
+        loginbutton.setAttribute("href","#");
+        loginbutton.innerHTML = "logout";
+        loginbutton.addEventListener('click',function (){
+            sessionStorage.removeItem('key');
+            window.location.reload();
+        })
+        head.style.display="flex";
+        for(let button of buttons){
+            button.style.display="inline";
+        }
+    }
+}
+function openModal(e){
+    e.preventDefault();
+    let modal = document.getElementById("modal1");
+    modal.setAttribute("style","display:flex;");
+    modal.removeAttribute("aria-hidden");
+    modal.setAttribute("aria-modal",'true')
+    console.log(modal);
+    
+
+}
 
 displayWorks();
+
 displayFilters();
-let ov = sessionStorage.getItem('key');
-console.log(ov);
+
+let token = sessionStorage.getItem('key');
+displayAdmin(token);
+
+let buttons = document.getElementsByClassName("button__editor");
+for(let button of buttons){
+    button.addEventListener('click',openModal);
+}
+
+
+
 
 
 

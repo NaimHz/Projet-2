@@ -9,25 +9,38 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<script src="https://kit.fontawesome.com/f801f66d2b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="admin__editor" id="admin__edit">
+	<p class="edition__p"><i class="fa-regular fa-pen-to-square"></i> Mode édition <button class="save__button"> publier les changement</button></p>
+</div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li><a href="login.html">login</a></li>
+			<li><a href="#portfolio">projets</a></li>
+			<li><a href="#contact">contact</a</li>
+			<li><a href="login.html" id="login__button">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 <main>
+	<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
+		<div class="modal-wrapper">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod non mauris nec tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget ex orci. Nullam non tristique mauris. Donec sapien nisi, suscipit non ullamcorper eget, tempus nec massa. Suspendisse potenti. Duis eu dignissim justo. Mauris ullamcorper commodo leo, quis gravida nisl ultricies eget. Aenean gravida massa gravida commodo consequat. Fusce vel erat nec quam fermentum dictum. Aenean cursus quis metus ac gravida. Vivamus ipsum est, mattis nec ligula a, pulvinar imperdiet velit. Phasellus ornare, felis vel tempus ultricies, nisl ligula vulputate libero, rhoncus convallis mi ex sed ex.
+
+				Duis lectus metus, rutrum vel dolor et, mattis ultrices nibh. Vivamus nec lacinia arcu, ut elementum est. Proin aliquet varius mi, id ultrices libero egestas eget. Nulla et turpis nulla. Praesent quis lacus velit. Nunc lobortis eleifend mauris, sed semper lorem venenatis sed. Nullam pharetra mi et tortor ultricies dictum. Curabitur aliquam ligula eget dui fringilla, a facilisis dui fermentum. Donec lobortis dolor vitae turpis lobortis molestie. Integer vel mauris et justo lobortis aliquam a in purus. Nam varius est non purus fermentum maximus. Aliquam lacinia diam vitae faucibus consectetur. Sed porta laoreet libero, dignissim luctus ipsum. Curabitur eleifend, nisl id vehicula dignissim, magna sapien varius sapien, sit amet volutpat ligula sem nec est. Curabitur sollicitudin ante pulvinar purus dignissim, eu vulputate sem facilisis.</p>
+		</div>
+	</aside>
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<button class="button__editor figure__editor"><i class="fa-regular fa-pen-to-square"></i> modifier</button>
 		</figure>
 		<article>
+			<button class="button__editor article__editor"><i class="fa-regular fa-pen-to-square"></i> modifier</button>
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -36,6 +49,7 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+		<button class="button__editor section__editor"><i class="fa-regular fa-pen-to-square"></i> modifier</button>
 		<div id="buttons" class="buttons">
 		</div>
 		<div class="gallery" id="works">
