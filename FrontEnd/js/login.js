@@ -32,11 +32,11 @@ function login(){
                         window.location.href="index.html";
                     }
                     else{
-                        resMessage = res.message;
-                        console.log(resMessage);
+                        document.getElementById("logincomment").innerHTML = 'Mauvais identifiant'
                     }
             }) .catch(function(err)  {
-                    
+                    console.log(err);
+                    document.getElementById("logincomment").innerHTML = 'Erreur de mot de passe'
             }) 
     })
   

@@ -21,6 +21,7 @@ exports.create = async (req, res) => {
 		})
 		return res.status(201).json(work)
 	}catch (err) {
+		console.log(err)
 		return res.status(500).json({ error: new Error('Something went wrong') })
 	}
 }
@@ -30,6 +31,7 @@ exports.delete = async (req, res) => {
 		await Works.destroy({where:{id: req.params.id}})
 		return res.status(204).json({message: 'Work Deleted Successfully'})
 	}catch(e){
+		console.log(e)
 		return res.status(500).json({error: new Error('Something went wrong')})
 	}
 

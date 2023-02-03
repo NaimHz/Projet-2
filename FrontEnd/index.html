@@ -27,13 +27,40 @@
 	</nav>
 </header>
 <main>
-	<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
-		<div class="modal-wrapper">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod non mauris nec tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget ex orci. Nullam non tristique mauris. Donec sapien nisi, suscipit non ullamcorper eget, tempus nec massa. Suspendisse potenti. Duis eu dignissim justo. Mauris ullamcorper commodo leo, quis gravida nisl ultricies eget. Aenean gravida massa gravida commodo consequat. Fusce vel erat nec quam fermentum dictum. Aenean cursus quis metus ac gravida. Vivamus ipsum est, mattis nec ligula a, pulvinar imperdiet velit. Phasellus ornare, felis vel tempus ultricies, nisl ligula vulputate libero, rhoncus convallis mi ex sed ex.
-
-				Duis lectus metus, rutrum vel dolor et, mattis ultrices nibh. Vivamus nec lacinia arcu, ut elementum est. Proin aliquet varius mi, id ultrices libero egestas eget. Nulla et turpis nulla. Praesent quis lacus velit. Nunc lobortis eleifend mauris, sed semper lorem venenatis sed. Nullam pharetra mi et tortor ultricies dictum. Curabitur aliquam ligula eget dui fringilla, a facilisis dui fermentum. Donec lobortis dolor vitae turpis lobortis molestie. Integer vel mauris et justo lobortis aliquam a in purus. Nam varius est non purus fermentum maximus. Aliquam lacinia diam vitae faucibus consectetur. Sed porta laoreet libero, dignissim luctus ipsum. Curabitur eleifend, nisl id vehicula dignissim, magna sapien varius sapien, sit amet volutpat ligula sem nec est. Curabitur sollicitudin ante pulvinar purus dignissim, eu vulputate sem facilisis.</p>
+	<div class="modal__container" id="modal1">
+		<div class="modal modal__home" id="modalhome">
+			<button class="button__close" id="close1"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+			<h3 class="modal__h3">Galerie photo</h3>
+			<div class="modal__works" id="modal__works">
+			</div>
+			<button class="btn__addimg" id="btnaddworks">Ajouter une photo</button>
+			<button class="btn__supprgalery" id="btn__supprgalery">Supprimer la galerie</button>
 		</div>
-	</aside>
+	</div>
+	<div class="modal__container" id="modal2">
+		<div class="modal modal__addworks" id="modaladdworks">
+			<div class="modal__buttons">
+				<button class="modal__button button__back" id="back2"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+				<button class="modal__button button__close" id="close2"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+			</div>
+			<h3 class="modal__h3 addworks__h3">Ajout photo</h3>
+			<form class="addworks__form" id="addworkform">
+				<div class="div__uploadimg" id="divuploadimg">
+					<i class="fa-sharp fa-solid fa-image iconeimg"></i>
+					<input class="addworkfield" type="file" accept="image/*" id="upload" required>
+					<label for="upload" class="button__upload">+ Ajouter photo</label>
+					<p class="upload__p">jpeg, png: 4mo max</p>
+				</div>
+				<label class="addworks__label">Titre</label>
+				<input type="text" class="addworks__input addworkfield" name="workName" id="workName" required>
+				<label class="addworks__label">Catégorie</label>
+				<input type="select" class="addworks__input addworkfield" name="workCategory" id="workCategory" required>
+			</form>
+			<div class="div__validation" id="addworkvalidation">
+				<button class="btn__validation" id="btnaddworksvalidation">Valider</button>
+			</div>
+		</div>
+	</div>
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
@@ -48,8 +75,7 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<button class="button__editor section__editor"><i class="fa-regular fa-pen-to-square"></i> modifier</button>
+		<h2>Mes Projets <button class="button__editor section__editor"><i class="fa-regular fa-pen-to-square"></i> modifier</button></h2>
 		<div id="buttons" class="buttons">
 		</div>
 		<div class="gallery" id="works">
