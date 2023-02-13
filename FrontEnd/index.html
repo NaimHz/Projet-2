@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="admin__editor" id="admin__edit">
-	<p class="edition__p"><i class="fa-regular fa-pen-to-square"></i> Mode édition <button class="save__button"> publier les changement</button></p>
+	<p class="edition__p"><i class="fa-regular fa-pen-to-square"></i> Mode édition <button class="save__button" id="saveButton"> publier les changement</button></p>
 </div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -29,7 +29,7 @@
 <main>
 	<div class="modal__container" id="modal1">
 		<div class="modal modal__home" id="modalhome">
-			<button class="button__close" id="close1"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+			<button class="button__close" id="close1"><i class="modal__button fa-sharp fa-solid fa-xmark"></i></button>
 			<h3 class="modal__h3">Galerie photo</h3>
 			<div class="modal__works" id="modal__works">
 			</div>
@@ -54,7 +54,11 @@
 				<label class="addworks__label">Titre</label>
 				<input type="text" class="addworks__input addworkfield" name="workName" id="workName" required>
 				<label class="addworks__label">Catégorie</label>
-				<input type="select" class="addworks__input addworkfield" name="workCategory" id="workCategory" required>
+				<select type="select" class="addworks__select addworkfield" name="workCategory" id="workCategory" required> 
+					<option value="1">Objets</option>
+					<option value="2">Appartements</option>
+					<option value="3">Hotels et restaurants</option>
+				</select>
 			</form>
 			<div class="div__validation" id="addworkvalidation">
 				<button class="btn__validation" id="btnaddworksvalidation">Valider</button>
