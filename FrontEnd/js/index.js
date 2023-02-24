@@ -1,4 +1,4 @@
-function setWorks(set){
+function setWorks(){
     return fetch("http://localhost:5678/api/works")
     .then(function(res) {
         if (res.ok) {
@@ -120,32 +120,28 @@ function displayFilteredWorks(category){
         }
     } 
 }
-function displayAdmin(token){
-
-    console.log(token);
-    
-        let buttons = document.getElementsByClassName("button__editor");
-        let head = document.getElementById("admin__edit");
-        let loginbutton = document.getElementById("login__button");
-        loginbutton.setAttribute("href","#");
-        loginbutton.innerHTML = "logout";
-        loginbutton.addEventListener('click',function (){
-            sessionStorage.removeItem('key');
-            window.location.reload();
-        })
-        head.style.display="flex";
-        for(let button of buttons){
-            button.style.display="inline";
-        }
-        let openModalButtons = document.getElementsByClassName("button__editor");
-        for(let openModalButton of openModalButtons){
-            openModalButton.addEventListener('click',openModal.bind(openModalButton,1));
-        }
-        let saveButton = document.getElementById("saveButton");
-        saveButton.addEventListener("click", saveChanges.bind(saveButton,setOfWorks))
+function displayAdmin(){
+    let buttons = document.getElementsByClassName("button__editor");
+    let head = document.getElementById("admin__edit");
+    let loginbutton = document.getElementById("login__button");
+    loginbutton.setAttribute("href","#");
+    loginbutton.innerHTML = "logout";
+    loginbutton.addEventListener('click',function (){
+        sessionStorage.removeItem('key');
+        window.location.reload();
+    })
+    head.style.display="flex";
+    for(let button of buttons){
+        button.style.display="inline";
+    }
+    let openModalButtons = document.getElementsByClassName("button__editor");
+    for(let openModalButton of openModalButtons){
+        openModalButton.addEventListener('click',openModal.bind(openModalButton,1));
+    }
+    let saveButton = document.getElementById("saveButton");
+    saveButton.addEventListener("click", saveChanges.bind(saveButton,setOfWorks))
 }
 function openModal(id,e){
-    console.log(id,e);
     e.preventDefault();
     activeModal = id;
     let modal = document.getElementById("modal"+id);
@@ -386,7 +382,7 @@ let token = sessionStorage.getItem('key');
 let setOfWorksSet = new Set();
 let setOfWorks = Array.from(setOfWorksSet);
 
-setWorks(setOfWorks).then(function(ok){
+setWorks().then(function(ok){
     let works = document.getElementById("works");
     let modalWorks = document.getElementById("modal__works");
     console.log(ok);
